@@ -1,0 +1,7 @@
+TEST USERS:
+Michael -> Pass: 1234
+Alicia -> Pass: 5678
+Shirley -> Pass: 0987
+Peter -> Pass: 5678
+Lois -> Pass: 1234
+Brian -> Pass: 4567

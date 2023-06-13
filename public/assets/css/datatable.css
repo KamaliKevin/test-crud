@@ -1,0 +1,48 @@
+/* DataTable custom CSS */
+#usersTable_paginate {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#usersTable_length,
+#usersTable_filter,
+#usersTable_info {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#usersTable_length select {
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: none;
+}
+
+#usersTable_filter input {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    box-shadow: none;
+}
+
+.paginate_button a {
+    background-color: #343a40;
+    color: white;
+    border: none;
+}
+
+.paginate_button a:focus {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    box-shadow: none;
+}
+
+.paginate_button a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.disabled {
+    opacity: 0;
+    pointer-events: none;
+}
