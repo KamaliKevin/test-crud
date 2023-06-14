@@ -1,13 +1,27 @@
 $(document).ready(function () {
+    let lastColIdx = $('#usersTable').find('thead').find('tr').children().length - 1; // Index of the last column in the DataTable
+    let lastColOrderable = true; // Decides if the last column should be ordered
+    let lastColSearchable = true; // Decides if the last column should be used for search
+
+    if(lastColIdx > 5)
+    {
+        lastColOrderable = false;
+        lastColSearchable = false;
+    }
+
+
     /* Initial settings for the DataTable objects */
     $('#usersTable').DataTable({
         responsive: true,
         lengthMenu: [ [5, 10, 25, 50, -1], [5, 10, 25, 50, "All"] ],
+        fixedColumns:   {
+            heightMatch: "auto"
+        },
         columnDefs: [
             {
-                targets: -1, // The last column index
-                orderable: false, // Disable ordering
-                searchable: false // Disable searching
+                targets: lastColIdx, // The last column
+                orderable: lastColOrderable, // Disable/enable ordering
+                searchable: lastColSearchable // Disable/enable searching
             }
         ],
         order: [[0, "desc"]],

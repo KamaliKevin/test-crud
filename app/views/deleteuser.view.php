@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en" data-bs-theme="auto">
 <head><script src="../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
@@ -7,11 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.112.5">
-    <title>Home Template · Bootstrap v5.3</title>
+    <title>Delete Template · Bootstrap v5.3</title>
 
     <link href="<?= ROOT ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css">
 
     <style>
         .bd-placeholder-img {
@@ -89,11 +87,9 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="<?= ROOT ?>/assets/css/cover.css" rel="stylesheet">
-    <link href="<?= ROOT ?>/assets/css/datatable.css" rel="stylesheet">
+    <link href="<?= ROOT ?>/assets/css/sign-in.css" rel="stylesheet">
 </head>
-
-<body class="h-100 text-bg-dark p-3">
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -146,94 +142,38 @@
 </div>
 
 
-<div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header>
-        <div class="d-flex flex-wrap justify-content-between">
-            <h3>Welcome to the test DB</h3>
-            <nav class="nav nav-masthead">
-                <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="<?= ROOT ?>">Home</a>
-                <a class="nav-link fw-bold py-1 px-0" href="<?= ROOT ?>/login">Login</a>
-                <a class="nav-link fw-bold py-1 px-0" href="<?= ROOT ?>/logout">Logout</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="mt-4 flex-grow-1">
-        <h4 class="my-4"><?= $username ?></h4>
-        <h3 class="my-4">User data</h3>
-        <div class="table-responsive">
-            <table id="usersTable" class="table table-dark table-striped mx-auto">
-                <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Date of birth</th>
-                    <th scope="col">Email</th>
-                    <?php if(isset($_SESSION["USER"])): ?>
-                    <th scope="col">--</th>
-                    <?php endif; ?>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($usersData as $user): ?>
-                    <tr>
-                        <th scope="row"><?= $user->id ?></th>
-                        <td><?= $user->username ?></td>
-                        <td><?= $user->firstName ?></td>
-                        <td><?= $user->lastName ?></td>
-                        <td><?= $user->dateOfBirth ?></td>
-                        <td><?= $user->email ?></td>
-                        <?php if(isset($_SESSION["USER"])): ?>
-                        <td class="d-flex justify-content-start">
-                            <form method="get" action="<?= ROOT ?>/edituser" class="mx-2">
-                                <input type="hidden" id="userId" name="userId" value="<?= $user->id ?>">
-                                <button type="submit" class="btn btn-warning">Edit</button>
-                            </form>
-                            <form method="get" action="<?= ROOT ?>/deleteuser" class="mx-2">
-                                <input type="hidden" id="userId" name="userId" value="<?= $user->id ?>">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                        <?php endif; ?>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="d-flex flex-wrap">
-            <?php if(isset($_SESSION["USER"])): ?>
-            <form method="post" action="<?= ROOT ?>/adduser" class="my-2">
-                <button type="submit" class="btn btn-success">Add user (avoid if possible and register instead)</button>
-            </form>
-            <?php endif; ?>
-
-            <form method="post" class="d-flex flex-wrap my-2 ms-lg-1 ms-md-1 ms-0">
-                <button type="submit" id="export" name="export" value="exportToExcel" class="btn btn-primary">
-                    Export to Excel
-                </button>
-                <button type="submit" id="export" name="export" value="exportToPDF" class="btn btn-primary ms-1">
-                    Export to PDF
-                </button>
-            </form>
-        </div>
-    </main>
-
-    <footer class="mt-auto text-white-50">
-        <p>
-            Home template for <a href="https://getbootstrap.com/" class="text-white" target="_blank">Bootstrap</a>,
-            by <a href="https://twitter.com/mdo" class="text-white" target="_blank">@mdo</a>.
-        </p>
-    </footer>
-</div>
-
+<main class="form-signin w-100 m-auto">
+    <div>
+        <h1 class="h3 mb-3 fw-normal">Are you sure you want to delete the user with ID <?= $userData->id ?? "" ?>?</h1>
+        <ul class="list-group">
+            <li class="list-group-item">
+                Username: <span class="fw-bold"><?= $userData->username ?? '' ?></span>
+            </li>
+            <li class="list-group-item">
+                First name: <span class="fw-bold"><?= $userData->firstName ?? '' ?></span>
+            </li>
+            <li class="list-group-item">
+                Last Name: <span class="fw-bold"><?= $userData->lastName ?? '' ?></span>
+            </li>
+            <li class="list-group-item">
+                Date of birth: <span class="fw-bold"><?= $userData->dateOfBirth ?? '' ?></span>
+            </li>
+            <li class="list-group-item">
+                Email: <span class="fw-bold"><?= $userData->email ?? '' ?></span>
+            </li>
+        </ul>
+    </div>
+    <form method="post">
+        <button class="btn btn-danger w-100 py-2 mt-4" type="submit"
+                id="finalAction" name="finalAction" value="cancel">Cancel</button>
+        <button class="btn btn-success w-100 py-2 mt-2" type="submit"
+                id="finalAction" name="finalAction" value="confirm">Confirm</button>
+    </form>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+</main>
 <script src="<?= ROOT ?>/assets/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js"></script>
-
-<script src="<?= ROOT ?>/assets/js/datatable.js"></script>
 
 </body>
 </html>
+
+

@@ -12,13 +12,6 @@ class Home
         $user = new User();
         $data = [];
 
-        /* CRUD: Deleting */
-        if(isset($_POST["deleteUser"]))
-        {
-            $userID = (int)$_POST["deleteUser"];
-            $user->delete($userID);
-        }
-
         /* Welcome message for user */
         $data["username"] = "Greetings, guest";
         if(!empty($_SESSION["USER"])){

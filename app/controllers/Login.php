@@ -20,7 +20,6 @@ class Login
 
             if($row)
             {
-                // $row->password === $_POST["password"]
                 if (password_verify($_POST["password"], $row->password))
                 {
                     $_SESSION["USER"] = $row;
