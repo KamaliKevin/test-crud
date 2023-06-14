@@ -10,14 +10,14 @@
 <pre>require '[REST_OF_PATH]/vendor/autoload.php';</pre>
 <p><b>[REST_OF_PATH]</b> indicates the folders/files that are before the <b>vendor</b> folder, if any</p>
 
-<p>4. The <b>TCPDF</b> should be available to use now in any file you want to use it</p>
+<p>4. The TCPDF package should be available to use now in <b>any file</b> you want to use it</p>
 
 # About this
 <p>Based on QuickProgramming's MVC Framework. This is a version of the "remastered-test-php-mvc-framework" 
 that gives the possibility to import the "users" HTML table into a downloadable Excel or PDF file.</p>
 
-<b>Also, you will be able to do basic CRUD from implemented buttons in the <b>Home</b> page. 
-Please, be aware the <b>plain text passwords</b> of the test users is found inside the <b>docs</b> folder, a file name <b>info-test-users.txt</b></p>
+<p>Also, you will be able to do basic CRUD from implemented buttons in the <b>Home</b> page <b>once you login</b>. 
+Please, be aware the <b>plain text passwords</b> of the test users are found inside the <b>docs</b> folder, in a file named <b>info-test-users.txt</b></p>
 
 # License
 This project uses the MIT License. You can find more information inside the "LICENSE.md" file.
