@@ -11,8 +11,8 @@ class EditUser
         $user = new User();
         $data = [];
 
-        /* Redirect to home page if the user tried to go to "edituser" without using the actual Edit button */
-        if(empty($_GET["userId"]))
+        /* Redirect to home page if the user tried to go to "edituser" without using an ID nor login */
+        if(!isset($_SESSION["USER"]) || empty($_GET["userId"]))
         {
             redirect("home");
         }

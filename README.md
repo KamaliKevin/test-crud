@@ -20,4 +20,4 @@ that gives the possibility to import the "users" HTML table into a downloadable 
 Please, be aware the <b>plain text passwords</b> of the test users are found inside the <b>docs</b> folder, in a file named <b>info-test-users.txt</b></p>
 
 # License
-This project uses the MIT License. You can find more information inside the "LICENSE.md" file.
+This project uses the MIT License. You can find more information inside the "LICENSE.md" file or in the following link: <a href="https://opensource.org/license/MIT/" target="_blank">MIT License</a>

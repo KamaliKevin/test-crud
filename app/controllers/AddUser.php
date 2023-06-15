@@ -11,6 +11,10 @@ class AddUser
         $user = new User();
         $data = [];
 
+        if(!isset($_SESSION["USER"])){
+            redirect("home");
+        }
+
         $data["userData"] = $_POST ?? [];
 
         if(isset($_POST["finalAction"])){

@@ -153,7 +153,7 @@
         <h1 class="h3 mb-3 fw-normal">Login</h1>
 
         <div class="form-floating">
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" name="email">
             <label for="email">Email</label>
         </div>
         <div class="form-floating mt-2">
@@ -168,11 +168,11 @@
             </label>
         </div>
         <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
-        <a class="icon-link icon-link-hover mt-2" href="<?= ROOT ?>">
-            Go back Home
-        </a>
         <a class="icon-link icon-link-hover mt-2" href="<?= ROOT ?>/signup">
             Not registered? Sign up here
+        </a>
+        <a class="icon-link icon-link-hover mt-2" href="<?= ROOT ?>">
+            Go back Home
         </a>
         <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
     </form>

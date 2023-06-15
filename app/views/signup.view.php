@@ -153,15 +153,15 @@
         <h1 class="h3 mb-3 fw-normal">Create an account</h1>
 
         <div class="form-floating">
-            <input type="text" class="form-control" id="username" name="username" placeholder="j_smith">
+            <input type="text" class="form-control" id="username" name="username">
             <label for="username">Username</label>
         </div>
         <div class="form-floating mt-2">
-            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John">
+            <input type="text" class="form-control" id="firstName" name="firstName">
             <label for="firstName">First name</label>
         </div>
         <div class="form-floating mt-2">
-            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Smith">
+            <input type="text" class="form-control" id="lastName" name="lastName">
             <label for="lastName">Last name</label>
         </div>
         <div class="form-floating mt-2">
@@ -169,7 +169,7 @@
             <label for="dateOfBirth">Date of birth</label>
         </div>
         <div class="form-floating mt-2">
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" name="email">
             <label for="email">Email</label>
         </div>
         <div class="form-floating mt-2">
@@ -177,7 +177,7 @@
             <label for="password">Password</label>
         </div>
         <div class="form-floating mt-2">
-            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="555789190">
+            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber">
             <label for="phoneNumber">Phone number</label>
         </div>
 
@@ -190,6 +190,9 @@
         <button class="btn btn-primary w-100 py-2" type="submit">Sign up</button>
         <a class="icon-link icon-link-hover mt-2" href="<?= ROOT ?>/login">
             Do you have already an account? Login here
+        </a>
+        <a class="icon-link icon-link-hover mt-2" href="<?= ROOT ?>">
+            Go back Home
         </a>
         <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
     </form>
